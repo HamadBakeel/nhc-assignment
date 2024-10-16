@@ -43,10 +43,10 @@ const ProductList = () => {
   }, [query]);
 
   return (
-    <div>
+    <div className=''>
         <SearchInput
         type="text"
-        placeholder="Search products..."
+        placeholder="Search keyword"
         value={query}
         onChange={(e) => setQuery(e.target.value)} // Update query on input change
     

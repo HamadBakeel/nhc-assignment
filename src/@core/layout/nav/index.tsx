@@ -27,7 +27,7 @@ const NavBar = () => {
                 {
                     routes.map((link) => {
                         const isActive = pathname.startsWith(link.href)
-                        return (<Link href={link.href} className={isActive ? 'text-[#285F9D]' : 'text-black'}>
+                        return (<Link key={link.href} href={link.href} className={isActive ? 'text-[#285F9D]' : 'text-black'}>
                             {link.name}
                         </Link>
                         )
