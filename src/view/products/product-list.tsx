@@ -1,0 +1,81 @@
+'use client'
+import CardItem from '@/@core/components/card-item';
+import NotFound from '@/@core/components/not-found';
+import SearchInput from '@/@core/components/search-input';
+import { TProduct } from '@/@core/types/products/index.types';
+import { useState, useEffect } from 'react';
+
+
+
+const ProductList = () => {
+  const [query, setQuery] = useState<string>(''); 
+  const [products, setProducts] = useState<TProduct[]>([]); 
+  const [loading, setLoading] = useState<boolean>(false); 
+
+  useEffect(() => {
+    if (query.length === 0) {
+      setProducts([]); 
+      return;
+    }
+
+    const fetchProducts = async () => {
+      setLoading(true); 
+      try {
+        const res = await fetch(`/api/products?q=${query}`);
+       
+        const data = await res.json();
+        const products = data.products?.products;
+        setProducts(products);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        setProducts([]);
+      } finally {
+        setLoading(false); // Stop loading
+      }
+    };
+
+    // Debouncing the API call to avoid too many requests
+    const debounceFetch = setTimeout(() => {
+      fetchProducts();
+    }, 500); // Wait for 500ms before making the request
+
+    return () => clearTimeout(debounceFetch); // Cleanup the timeout when query changes
+  }, [query]);
+
+  return (
+    <div>
+        <SearchInput
+        type="text"
+        placeholder="Search products..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)} // Update query on input change
+    
+        />
+
+      
+
+      {loading && <p>Loading...</p>} 
+
+      
+        <div>
+            {/* Add Grid */}
+            {products.length > 0 ? (
+          products.map((product) => (
+            <CardItem
+            key={product.title}
+            product={product}
+            />
+            
+          ))
+        ) : (
+          query && !loading && <p>
+            <NotFound/>
+          </p>
+        )}
+        </div>
+      
+    </div>
+  );
+};
+
+export default ProductList;
