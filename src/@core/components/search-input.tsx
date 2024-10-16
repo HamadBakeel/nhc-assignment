@@ -6,8 +6,8 @@ interface TSearchInputProps extends React.InputHTMLAttributes<HTMLInputElement>{
 }
 
 const SearchInput: React.FC<TSearchInputProps> = ({productsCount,...props}) => {
-  return <div className="max-w-[90%] md:max-w-[740px] mx-auto m-7 mb-6">
-        <p className='text-[#285F9D] text-lg'>Search products by keyword</p>
+  return <div className="max-w-[90%] md:max-w-[740px] mx-auto mt-9 mb-10">
+        <p className='text-[#285F9D] text-md'>Search products by keyword</p>
         <div className="relative border-2 border-[#006483D1] bg-[#F3F3F3] rounded-lg h-12 overflow-hidden px-3 flex items-center my-5">
           <Image 
             src={'search.svg'} 
