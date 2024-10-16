@@ -49,12 +49,12 @@ const ProductList = () => {
         placeholder="Search keyword"
         value={query}
         onChange={(e) => setQuery(e.target.value)} // Update query on input change
-    
+        productsCount={products.length}
         />
 
       
 
-      {loading && <p>Loading...</p>} 
+      {loading && <p className='m-auto'>Loading...</p>} 
 
       
         <div>
