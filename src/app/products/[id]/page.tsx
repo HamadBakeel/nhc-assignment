@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation'; // Using usePathname hook for path extraction
 import Image from 'next/image';
+import Loader from '@/@core/components/loader';
 
 const ProductPage = () => {
     const [product, setProduct] = useState<any>(null);
@@ -35,15 +36,15 @@ const ProductPage = () => {
     }, [id]);
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <Loader />;
     }
 
     if (error) {
-        return <p>Error: {error}</p>;
+        return <p className='m-auto'>{error}</p>;
     }
 
     if (!product) {
-        return <p>Product not found</p>;
+        return <p className='m-auto'>Product not found</p>;
     }
 
     return (

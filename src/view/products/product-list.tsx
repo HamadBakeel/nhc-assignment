@@ -1,5 +1,6 @@
 'use client'
 import CardItem from '@/@core/components/card-item';
+import Loader from '@/@core/components/loader';
 import NotFound from '@/@core/components/not-found';
 import SearchInput from '@/@core/components/search-input';
 import { TProduct } from '@/@core/types/products/index.types';
@@ -54,7 +55,7 @@ const ProductList = () => {
 
 
 
-      {loading && <p className='m-auto'>Loading...</p>}
+      {loading && <Loader/>}
 
 
       <div className={` ${products.length > 0 ? 'grid': 'flex'} grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4`}>
