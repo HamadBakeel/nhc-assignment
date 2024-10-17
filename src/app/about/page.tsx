@@ -3,10 +3,10 @@ import React from 'react'
 
 type Props = {}
 
-function About({}: Props) {
+function About({ }: Props) {
   return (
     <div className='px-[10vw] 2xl:px-[25vw] w-screen mb-8 pt-16 pb-40'>
-      <Image src="/nhc-logo.svg" alt="" width={250} height={240} className='m-auto'/>
+      <Image src="/nhc-logo.svg" alt="" width={250} height={240} className='m-auto' />
 
       <h3 className='text-nhc mb-6 mt-8 font-abel'>
         About NHC National Housing Company
@@ -19,7 +19,7 @@ function About({}: Props) {
         National Housing Strategy
       </h3>
       <p className='font-abel'>
-      The NHC Strategy aims for the Company to be an enabler of the real estate supply system by empowering the private sector to develop the real estate market and improve the professionalism of the services provided in it, thus offering broader horizons for the Company in enhancing the sustainability of its business and the work of the real estate supply system.
+        The NHC Strategy aims for the Company to be an enabler of the real estate supply system by empowering the private sector to develop the real estate market and improve the professionalism of the services provided in it, thus offering broader horizons for the Company in enhancing the sustainability of its business and the work of the real estate supply system.
       </p>
     </div>
   )

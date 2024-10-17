@@ -57,7 +57,7 @@ const ProductList = () => {
       {loading && <p className='m-auto'>Loading...</p>}
 
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+      <div className={` ${products.length > 0 ? 'grid': 'flex'} grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4`}>
         {products.length > 0 ? (
           products.map((product) => (
             <CardItem
@@ -67,9 +67,8 @@ const ProductList = () => {
 
           ))
         ) : (
-          query && !loading && <p>
+          query && !loading && 
             <NotFound />
-          </p>
         )}
       </div>
 
