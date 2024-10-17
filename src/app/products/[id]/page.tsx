@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation'; // Using usePathname hook for path extraction
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Loader from '@/@core/components/loader';
 
@@ -19,7 +19,8 @@ const ProductPage = () => {
         const fetchProduct = async () => {
             setLoading(true);
             try {
-                const res = await fetch(`https://dummyjson.com/products/${id}`);
+                // Fetch product data from the Next.js API route
+                const res = await fetch(`/api/products/${id}`);
                 if (!res.ok) {
                     throw new Error('Product not found');
                 }
@@ -51,7 +52,6 @@ const ProductPage = () => {
         <div className="max-w-6xl mx-auto px-4 py-8">
             {/* Product Title */}
             <h1 className="text-3xl text-nhc text-center mb-6">{product.title}</h1>
-
 
             {/* Product Image and Info */}
             <div className="flex flex-col items-center justify-center w-[480px] m-auto">
