@@ -21,13 +21,13 @@ const NavBar = () => {
         <nav
             className="flex flex-row justify-start items-center w-full h-16 px-8 py-2 bg-[#D9D9D91F] shadow-sm gap-14"
         >
-            <Image src="nhc-logo.svg" alt="" width={60} height={60} />
+            <Image src="/nhc-logo.svg" alt="" width={60} height={60} />
 
             <div className="flex justify-between gap-10">
                 {
                     routes.map((link) => {
                         const isActive = pathname.startsWith(link.href)
-                        return (<Link key={link.href} href={link.href} className={isActive ? 'text-nhc' : 'text-black'}>
+                        return (<Link key={link.href} href={link.href} className={`font-abel ${isActive ? 'text-nhc' : 'text-black'}`}>
                             {link.name}
                         </Link>
                         )
