@@ -6,7 +6,7 @@ import Loader from '@/@core/components/loader';
 import { TProduct } from '@/@core/types/products/index.types';
 
 const ProductPage = () => {
-    const [product, setProduct] = useState<TProduct[]>([]);
+    const [product, setProduct] = useState<TProduct>();
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 

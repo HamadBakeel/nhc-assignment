@@ -4,5 +4,10 @@ export type TProduct={
     title:string;
     description:string;
     images:string[],
-    price: number
+    price: number,
+    rating: number,
+    brand: string,
+    discountPercentage: number,
+    stock: number,
+    category: string,
 }
