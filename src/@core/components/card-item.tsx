@@ -15,7 +15,7 @@ const CardItem = ({ product }: { product: TProduct }) => {
                 <p className="text-gray-500 mt-2">{truncatedDescription}</p>
 
                 <div className="flex justify-between items-center mt-4">
-                    <p className="text-gray-700">Price : <span className="text-blue-600">549$</span></p>
+                    <p className="text-gray-700">Price : <span className="text-blue-600">{product.price}</span></p>
                     <Link href={'/products/'+product.id} className="bg-nhc text-white text-sm px-4 py-2 rounded-md">More</Link>
                 </div>
             </div>

@@ -3,5 +3,6 @@ export type TProduct={
     thumbnail: string;
     title:string;
     description:string;
-    images:string[]
+    images:string[],
+    price: number
 }
