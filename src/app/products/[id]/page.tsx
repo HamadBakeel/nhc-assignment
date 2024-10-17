@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Loader from '@/@core/components/loader';
+import { TProduct } from '@/@core/types/products/index.types';
 
 const ProductPage = () => {
-    const [product, setProduct] = useState<any>(null);
+    const [product, setProduct] = useState<TProduct[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
