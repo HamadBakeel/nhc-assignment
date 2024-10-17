@@ -55,7 +55,7 @@ const ProductPage = () => {
             <h1 className="text-3xl text-nhc text-center mb-6">{product.title}</h1>
 
             {/* Product Image and Info */}
-            <div className="flex flex-col items-center justify-center w-[480px] m-auto">
+            <div className="flex flex-col items-center justify-center w-full md:w-[480px] m-auto">
                 {/* Main Image */}
                 <div className="flex justify-center">
                     <Image
